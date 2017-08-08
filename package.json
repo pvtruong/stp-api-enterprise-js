@@ -1,0 +1,32 @@
+{
+	"name": "stp-api-enterprise-js",
+	"main": "app.js",
+	"description": "APIs for STP Enterprise",
+	"version": "1.0.1",
+	"author": {
+		"name": "Van Truong Pham",
+		"email": "invncur@gmail.com"
+	},
+	"keywords": [
+		"erp","accounting","hrm","kế toán"
+	],
+	"dependencies": {
+		"express": "latest",
+		"body-parser": "latest",
+        "express-session":"latest",
+
+		"underscore":"latest",
+
+		"async":"latest",
+	
+		
+		"multer":"0.1.8",
+		
+		"request":"latest",
+		
+		"numeral":"latest",
+		
+		"moment":"latest",
+        "compression":"latest"
+	}
+}
