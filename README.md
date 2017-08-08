@@ -11,39 +11,46 @@
 ## Hướng dẫn sử dụng API:
 ### Lấy token để kết nối với chương trình
 	- Url: http://localhost:1986/api/{database}/token
+    - Method: GET
 	- Headers:
 		+ username: tên người dùng để truy cập vào ứng dụng STP Enterprise. người dùng này phải có quyền admin
 		+ password: mật khẩu của người dùng trên
 	- Thay thế {database} bằng tên database cần chạy API
 ### Xoá token (logout)
     - Url: http://localhost:1986/api/{database}/logout
+    - Method: GET
 	- Headers:
 		+ access-token: token lấy được ở bước trên
 	- Thay thế {database} bằng tên database cần chạy API
 ### Các hàm API danh mục
 #### 1. Danh mục khách hàng
         - Url: http://localhost:1986/api/{database}/list/dmkh
+        - Method: GET
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		- Thay thế {database} bằng tên database cần chạy API
 #### 2. Danh mục tài khoản
         - Url: http://localhost:1986/api/{database}/list/dmtk
+        - Method: GET
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		- Thay thế {database} bằng tên database cần chạy API
 #### 3. Danh mục vật tư
         - Url: http://localhost:1986/api/{database}/list/dmvt
+        - Method: GET
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		- Thay thế {database} bằng tên database cần chạy API
 #### 4. Danh mục hợp đồng
         - Url: http://localhost:1986/api/{database}/list/dmhd
+        - Method: GET
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		- Thay thế {database} bằng tên database cần chạy API
 ### Các hàm API báo cáo
 #### 1. Bảng cân đối phát sinh công nợ của các hợp đồng
 		- Url: http://localhost:1986/api/{database}/report/rcdpshopdong/1
+        - Method: GET
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		-  Parameters:
@@ -54,6 +61,7 @@
 		
 #### 2. Kết quả hoạt động kinh doanh: Báo cáo kết quả hoạt động kinh doanh (theo thông tư 200)
         - Url: http://localhost:1986/api/{database}/report/rbckqhdkd_200/1
+        - Method: GET
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		-  Parameters:
@@ -67,6 +75,7 @@
 
 #### 3. Tiền: Bảng cân đối phát sinh các tài khoản 1111, 1131 và các tài khoản 1121
         - Url: http://localhost:1986/api/{database}/report/rcandoipstk_200/1
+        - Method: GET
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		-  Parameters:
