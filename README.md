@@ -18,7 +18,7 @@
 ### Xoá token (logout)
     - Url: http://localhost:1986/api/{database}/logout
 	- Headers:
-		+ token: token lấy được ở bước trên
+		+ access-token: token lấy được ở bước trên
 	- Thay thế {database} bằng tên database cần chạy API
 ### Các hàm API báo cáo
 #### 1. Bảng cân đối phát sinh công nợ của các hợp đồng
