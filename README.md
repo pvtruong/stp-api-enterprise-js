@@ -44,8 +44,8 @@
 			+ access-token: token lấy được từ bước 1
 		-  Parameters:
 			+ dFrom: tính từ ngày. Ví dụ  báo cáo từ ngày 1/1/2017 thì giá trị của biến này là: `2017-01-01`
-            		+ dTo: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
-            		+ cAcct: `111` hoặc `112` hoặc `113`
+            	+ dTo: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
+            	+ cAcct: `111` hoặc `112` hoặc `113`
 		- Thay thế {database} bằng tên database cần chạy API
         
  
