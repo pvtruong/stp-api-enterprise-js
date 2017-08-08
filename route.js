@@ -78,7 +78,7 @@ module.exports = function(app) {
     //ent list
     router.route('/:database/list/:id_list').get(function(req,res,next){
 		var database = req.params.database;
-        var id_list = req.params.listid;
+        var id_list = req.params.id_list;
 		var token = req.headers['access-token']||req.query.access_token;
         
 		var url = server + database + "/list/" + id_list + "?token=" + token;
