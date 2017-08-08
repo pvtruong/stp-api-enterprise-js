@@ -60,6 +60,21 @@ module.exports = function(app) {
 			return res.send(body);
 		});
     });
+    //logout
+    var request = require("request");
+    router.route('/:database/logout').get(function(req,res,next){
+        let database = req.params.database;
+		var token = req.headers['access-token']||req.query.access_token;
+		let url =  server + database + "/logout?token=" + token;
+        
+		request(url,function(error,response,body){
+			if(error) return res.status(400).send(error);
+			if(body.indexOf("ERROR")>=0){
+				return res.status(400).send(body);
+			}
+			return res.send(body);
+		});
+    });
     //ent report
     router.route('/:database/report/:id_rpt/:stt').get(function(req,res,next){
 		var database = req.params.database;

@@ -9,17 +9,22 @@
   * Sau khi cài đặt xong, chạy lệnh sau để khởi động chương trình
   `node app.js`
 ## Hướng dẫn sử dụng API:
-### Bước 1: Lấy token để kết nối với chương trình
+### Lấy token để kết nối với chương trình
 	- Url: http://localhost:1986/api/{database}/token
 	- Headers:
 		+ username: tên người dùng để truy cập vào ứng dụng STP Enterprise. người dùng này phải có quyền admin
 		+ password: mật khẩu của người dùng trên
 	- Thay thế {database} bằng tên database cần chạy API
-### Bước 2: API báo cáo
+### Xoá token (logout)
+    - Url: http://localhost:1986/api/{database}/logout
+	- Headers:
+		+ token: token lấy được ở bước trên
+	- Thay thế {database} bằng tên database cần chạy API
+### Các hàm API báo cáo
 #### 1. Bảng cân đối phát sinh công nợ của các hợp đồng
 		- Url: http://localhost:1986/api/{database}/report/cdpshopdong/1
 		- Headers:
-			+ access-token: token lấy được từ bước 1
+			+ access-token: token lấy được từ bước lấy token
 		-  Parameters:
 			+ tu_ngay: tính từ ngày. Ví dụ báo cáo từ ngày 1/1/2017 thì giá trị của biến này là: `2017-01-01`
             	+ den_ngay: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
@@ -29,7 +34,7 @@
 #### 2. Kết quả hoạt động kinh doanh: Báo cáo kết quả hoạt động kinh doanh (theo thông tư 200)
         - Url: http://localhost:1986/api/{database}/report/rbckqhdkd_200/1
 		- Headers:
-			+ access-token: token lấy được từ bước 1
+			+ access-token: token lấy được từ bước lấy token
 		-  Parameters:
 			+ dFrom: tính từ ngày kỳ này. Ví dụ  báo cáo từ ngày 1/1/2017 thì giá trị của biến này là: `2017-01-01`
             	+ dTo: tính đến ngày kỳ này. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
@@ -42,7 +47,7 @@
 #### 3. Tiền: Bảng cân đối phát sinh các tài khoản 1111, 1131 và các tài khoản 1121
         - Url: http://localhost:1986/api/{database}/report/rcandoipstk_200/1
 		- Headers:
-			+ access-token: token lấy được từ bước 1
+			+ access-token: token lấy được từ bước lấy token
 		-  Parameters:
 			+ dFrom: tính từ ngày. Ví dụ  báo cáo từ ngày 1/1/2017 thì giá trị của biến này là: `2017-01-01`
             	+ dTo: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
