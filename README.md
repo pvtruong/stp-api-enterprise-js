@@ -21,8 +21,8 @@
 			+ access-token: token lấy được từ bước 1
 		-  Parameters:
 			+ tu_ngay: tính từ ngày. Ví dụ báo cáo từ ngày 1/1/2017 thì giá trị của biến này là: `2017-01-01`
-            + den_ngay: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
-            + tk: giá trị là `131` hoặc `331`
+            		+ den_ngay: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
+            		+ tk: giá trị là `131` hoặc `331`
 		- Thay thế {database} bằng tên database cần chạy API
 		
 #### 2. Kết quả hoạt động kinh doanh: Báo cáo kết quả hoạt động kinh doanh (theo thông tư 200)
@@ -31,10 +31,10 @@
 			+ access-token: token lấy được từ bước 1
 		-  Parameters:
 			+ dFrom: tính từ ngày kỳ này. Ví dụ  báo cáo từ ngày 1/1/2017 thì giá trị của biến này là: `2017-01-01`
-            + dTo: tính đến ngày kỳ này. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
-            + dPrevBegin: tính từ ngày kỳ trước. Ví dụ  báo cáo từ ngày 1/1/2016 thì giá trị của biến này là: `2016-01-01`
-            + dPrevEnd: tính đến ngày kỳ trước. Ví dụ  báo cáo đến ngày 31/12/2016 thì giá trị của biến này là: `2016-12-31`
-            + cForm: luôn có giá trị là `02`
+            		+ dTo: tính đến ngày kỳ này. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
+            		+ dPrevBegin: tính từ ngày kỳ trước. Ví dụ  báo cáo từ ngày 1/1/2016 thì giá trị của biến này là: `2016-01-01`
+            		+ dPrevEnd: tính đến ngày kỳ trước. Ví dụ  báo cáo đến ngày 31/12/2016 thì giá trị của biến này là: `2016-12-31`
+            		+ cForm: luôn có giá trị là `02`
 		- Thay thế {database} bằng tên database cần chạy API
         
 
@@ -44,8 +44,8 @@
 			+ access-token: token lấy được từ bước 1
 		-  Parameters:
 			+ dFrom: tính từ ngày. Ví dụ  báo cáo từ ngày 1/1/2017 thì giá trị của biến này là: `2017-01-01`
-            + dTo: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
-            + cAcct: `111` hoặc `112` hoặc `113`
+            		+ dTo: tính đến ngày. Ví dụ  báo cáo đến ngày 31/12/2017 thì giá trị của biến này là: `2017-12-31`
+            		+ cAcct: `111` hoặc `112` hoặc `113`
 		- Thay thế {database} bằng tên database cần chạy API
         
  
