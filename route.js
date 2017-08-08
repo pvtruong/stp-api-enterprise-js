@@ -75,6 +75,41 @@ module.exports = function(app) {
 			return res.send(body);
 		});
     });
+    //ent list
+    router.route('/:database/list/:id_list').get(function(req,res,next){
+		var database = req.params.database;
+        var id_list = req.params.listid;
+		var token = req.headers['access-token']||req.query.access_token;
+        
+		var url = server + database + "/list/" + id_list + "?token=" + token;
+		var v_q;
+		for(let q in req.query){
+			if(q!=="access_token"){
+				v_q = req.query[q];
+				if(v_q==true || v_q=="true"){
+					v_q ="1"
+				}
+				if(v_q==false || v_q=="false"){
+					v_q=="0"
+				}
+				url = url + "&" + q + "=" + encodeURI(v_q);
+			}
+
+		}
+		request(url,function(error,response,body){
+			if(error) return res.status(400).send(error);
+			if(body.indexOf("ERROR")>=0){
+				return res.status(400).send(body);
+			}
+			try{
+				body = JSON.parse(body);
+
+			} catch(e){
+			   return res.status(400).send(e + "\n" + url);
+			}
+			res.send(body);
+		});
+    });
     //ent report
     router.route('/:database/report/:id_rpt/:stt').get(function(req,res,next){
 		var database = req.params.database;

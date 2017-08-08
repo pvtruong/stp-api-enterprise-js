@@ -20,9 +20,30 @@
 	- Headers:
 		+ access-token: token lấy được ở bước trên
 	- Thay thế {database} bằng tên database cần chạy API
+### Các hàm API danh mục
+#### 1. Danh mục khách hàng
+        - Url: http://localhost:1986/api/{database}/list/dmkh
+		- Headers:
+			+ access-token: token lấy được từ bước lấy token
+		- Thay thế {database} bằng tên database cần chạy API
+#### 2. Danh mục tài khoản
+        - Url: http://localhost:1986/api/{database}/list/dmtk
+		- Headers:
+			+ access-token: token lấy được từ bước lấy token
+		- Thay thế {database} bằng tên database cần chạy API
+#### 3. Danh mục vật tư
+        - Url: http://localhost:1986/api/{database}/list/dmvt
+		- Headers:
+			+ access-token: token lấy được từ bước lấy token
+		- Thay thế {database} bằng tên database cần chạy API
+#### 4. Danh mục hợp đồng
+        - Url: http://localhost:1986/api/{database}/list/dmhd
+		- Headers:
+			+ access-token: token lấy được từ bước lấy token
+		- Thay thế {database} bằng tên database cần chạy API
 ### Các hàm API báo cáo
 #### 1. Bảng cân đối phát sinh công nợ của các hợp đồng
-		- Url: http://localhost:1986/api/{database}/report/cdpshopdong/1
+		- Url: http://localhost:1986/api/{database}/report/rcdpshopdong/1
 		- Headers:
 			+ access-token: token lấy được từ bước lấy token
 		-  Parameters:
