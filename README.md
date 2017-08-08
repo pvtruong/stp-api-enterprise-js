@@ -1,6 +1,7 @@
 # APIs cho STP Enterprise
 ## Hướng dẫn cài đặt: Chỉ cài đặt chương trình này trên server chứa STP Service của chương trình [STP Enterprise](https://ungdungquanly.vn/downloads/STP_ENTERPRISE_FULL_2017.exe)
-  * Clone mã nguồn của ứng dụng trực tiếp từ Github hoặc [download](https://github.com/pvtruong/stp-api-enterprise-js/archive/master.zip) và giải nén. Các bước sau giả sử mã nguồn của chương trình đang ở thư mục `d:/STP-API-ENTERPRISE_JS`
+  * Cài đặt NodeJS bản mới nhất. [Download](https://nodejs.org/en/)
+  * Clone mã nguồn của ứng dụng trực tiếp từ Github hoặc [download](https://github.com/pvtruong/stp-api-enterprise-js/archive/master.zip) và giải nén. Các bước sau giả sử mã nguồn của chương trình đang ở thư mục `d:/STP-API-ENTERPRISE_JS`
   * Mở command line (trên Windows) hoặc terminal (trên Linux), chuyển thư mục làm việc đến thư mục chứa mã nguồn ở trên, ví dụ:
   `cd d:/STP-API-ENTERPRISE_JS`
   * Cài đặt các thư viện cần thiết bằng `npm`
