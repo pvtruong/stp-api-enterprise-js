@@ -58,7 +58,6 @@ module.exports = function(app) {
 		});
     });
     //logout
-    var request = require("request");
     router.route('/:database/logout').get(function(req,res,next){
         let database = req.params.database;
 		var token = req.headers['access-token']||req.query.access_token;
