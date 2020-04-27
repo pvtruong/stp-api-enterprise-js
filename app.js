@@ -1,18 +1,3 @@
-/*
-The MIT License (MIT)
-
-Copyright (c) 2017 Sao Tien Phong
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-*/
 var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -22,12 +7,9 @@ var https = require("https");
 var http = require('http');
 var fs = require("fs");
 var async = require('async');
-
 var app = express();
 var compress = require('compression');
 app.use(compress());
-
-
 //
 app.options('/*', function(req, res) {
     res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
@@ -62,5 +44,3 @@ var port = "1986";
 server.listen(port, function() {
 	console.log('server start at ' + port + ' port');
 });
-
-
