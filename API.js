@@ -25,7 +25,7 @@ async function getEndpoint(database,email,token){
   let url = server + database + "/report/" + id_rpt + "/" + stt +  "?token=" + token;
   return await getDataFromSTPService(url)
 }
-async function emitEvent(email, event, _data, push, c_token) {
+async function emitEvent(email, event, _data, push,database, token,endpoint) {
   let data;
   if(typeof(_data)==="object"){
     data = Object.assign({},_data);
@@ -36,16 +36,14 @@ async function emitEvent(email, event, _data, push, c_token) {
   //web push, expo push
   if ((data.title || data.body) && (push || push === undefined)) {
     //web push
-    if(data.title) data.title = data.title.replace(/<[^>]*>?/gm, '')
-    if(data.body) data.body = data.body.replace(/<[^>]*>?/gm, '')
-    const eps = await getEndpoint(email);
+    if(data.title) data.title = data.title.replace(/<[^>]*>?/gm, '');
+    if(data.body) data.body = data.body.replace(/<[^>]*>?/gm, '');
     const expo = new Expo();
     const messages = [];
-    eps.forEach(ep=> {
-      //check ep
-      if (Expo.isExpoPushToken(ep.endpoint)) {
+    if(endpoint){
+      if (Expo.isExpoPushToken(endpoint)) {
         messages.push({
-          to: ep.endpoint,
+          to: endpoint,
           sound: 'default',
           badge:1,
           title:data.title,
@@ -54,7 +52,23 @@ async function emitEvent(email, event, _data, push, c_token) {
           channelId: data.channel||"default"
         })
       }
-    })
+    }else{
+      const eps = await getEndpoint(database, email, token);
+      eps.forEach(ep=> {
+        //check ep
+        if (Expo.isExpoPushToken(ep.endpoint)) {
+          messages.push({
+            to: ep.endpoint,
+            sound: 'default',
+            badge:1,
+            title:data.title,
+            body: (data.body!==data.title?data.body:""),
+            data: data,
+            channelId: data.channel||"default"
+          })
+        }
+      })
+    }
     //expo push notification to apple and google
     messages.forEach(message=>{
       let chunks = expo.chunkPushNotifications([message]);

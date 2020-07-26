@@ -41,8 +41,9 @@ BEGIN
   IF @hr <> 0 EXEC sp_OAGetErrorInfo @Obj
 	--destroy connect
 	exec @hr = sp_OADestroy @obj
-	return @msg
+	select @msg
+  return
 	eh:
 	exec @hr = sp_OADestroy @obj
-	return @msg
+	select @msg
 END
